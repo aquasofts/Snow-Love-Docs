@@ -1,0 +1,79 @@
+# ==========================================
+# 雪之恋 - 项目文档配置文件
+# 框架：MkDocs
+# 主题：Material for MkDocs
+# ==========================================
+
+# 1. 基础信息
+site_name: 雪之恋开发维基
+site_description: 记录Galgame项目的开发流程、美术规范与脚本设定
+site_author: 项目组
+site_url: https://your-project.github.io/galgame-docs/
+repo_url: https://github.com/aquasofts/Snow-Love
+repo_name: GitHub
+
+# 2. 主题设置 (Material Theme)
+theme:
+  name: material
+  language: zh # 设置界面语言为中文
+  
+  # 颜色风格 (适配你的游戏风格)
+  palette: 
+    # 亮色模式 (默认)
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal #以此纪念木子米的主题色
+      accent: pink  #以此纪念素织的主题色
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到深色模式
+    # 深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: pink
+      toggle:
+        icon: material/weather-night
+        name: 切换到亮色模式
+
+  # 常用功能特性
+  features:
+    - navigation.tabs        # 顶部导航栏模式 (更像现代官网)
+    - navigation.sections    # 侧边栏分组
+    - navigation.top         # 返回顶部按钮
+    - search.suggest         # 搜索建议
+    - search.highlight       # 搜索关键词高亮
+    - content.code.copy      # 代码块一键复制按钮 (写代码很有用)
+    - content.action.edit    # 允许在 GitHub 上编辑页面
+
+# 3. 插件配置
+plugins:
+  - search # 开启搜索功能
+
+# 4. Markdown 扩展语法 (让文档更好看)
+markdown_extensions:
+  - admonition            # 支持“提示/警告”框 (!!! note "提示")
+  - pymdownx.details      # 支持折叠内容 (??? "点击展开")
+  - pymdownx.superfences  # 支持高级代码块
+  - pymdownx.highlight:   # 代码高亮设置
+      anchor_linenums: true
+  - pymdownx.emoji:       # 支持 emoji 表情
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - toc:
+      permalink: true     # 标题旁显示锚点链接
+
+# 5. 导航栏结构 (根据你的项目规划)
+# 这里的 markdown 文件需要你在 docs 目录下创建
+nav:
+  - 首页: index.md
+  - AI工作流指南: workflow.md  # 将刚才写的《AI制作指南》放在这里
+  - 角色设定:
+      - 角色总览: characters/overview.md
+      - 素织 (Suzhi): characters/suzhi.md
+      - 木子米 (Muzimi): characters/muzimi.md
+      - 凌宁 (Lingning): characters/lingning.md
+  - 脚本规范:
+      - RenPy基础: script/renpy_basics.md
+      - 特效指令: script/effects.md
+  - 更新日志: changelog.md
