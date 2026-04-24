@@ -76,4 +76,5 @@ nav:
   - 脚本规范:
       - RenPy基础: script/renpy_basics.md
       - 特效指令: script/effects.md
+      - ai写代码教程: script/ai.md
   - 更新日志: changelog.md
